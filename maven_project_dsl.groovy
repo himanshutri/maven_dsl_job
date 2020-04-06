@@ -1,15 +1,15 @@
 job('first_project_job_through_DSL') {
    description('My first job THROUGH dsl')
     scm {
-        github('jenkinsci/job-dsl-plugin', 'master')
+        github('https://github.com/himanshutri/maven_dsl_job.git', 'master')
     }
     triggers {
-        scm()
+        scm('* * * * *')
     }
     steps {
         maven('clean build')
     }
     publishers {
-        archiveArtifacts('job-dsl-plugin/build/libs/job-dsl.hpi')
+        archiveArtifacts('**/*.war')
     }
 }
