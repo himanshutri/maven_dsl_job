@@ -1,7 +1,7 @@
 job('first_project_job_through_DSL') {
    description('My first job THROUGH dsl')
     scm {
-        github('/himanshutri/maven_dsl_job', 'master')
+        github('himanshutri/spring-web-project', 'master')
     }
     triggers {
         scm('* * * * *')
